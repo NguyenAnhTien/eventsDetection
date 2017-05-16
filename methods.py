@@ -28,7 +28,9 @@ def get_events(url):
 		title = entry['title']
 		summary = entry['summary']
 		link = entry['link']
-		title_and_summary = {"title" :title, "summary" :summary, "url" :link}
+		author=entry['author_detail']
+		category = entry['tags']
+		title_and_summary = {"title" :title, "summary" :summary, "url" :link,"author" :author,"category" :category}
 		result = db.events.insert_one(title_and_summary)
 		result.inserted_id
 		list_of_content.append(title_and_summary)

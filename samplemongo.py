@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import feedparser
+import datefinder
 from pymongo import MongoClient
 
 client = MongoClient() #connect mongoclient to an instance of mogod
@@ -10,7 +11,7 @@ db = client.webevents #create a db test
 
 def trade_spider():
     info  =' '
-    url="http://www.eventsdoha.com/the-backyard-the-end-of-the-seadon-19th-may-sheraton-gran/"
+    url="http://www.eventsdoha.com/white-salsa-night-a-farewell-to-dubraska-the-irish-harp-sheraton-garnd-17th-may/"
     source_code = requests.get(url)
     plain_text = source_code.text
     soup = BeautifulSoup(plain_text, "html.parser")
@@ -27,6 +28,12 @@ def trade_spider():
         # for link in soup.find_all('p', ):
         #   href = link.get('href')
         #  print(href)
-    return 0
+    return info
 
-trade_spider()
+if __name__ == "__main__":
+    information=trade_spider()
+    string_with_dates= information
+    matches = datefinder.find_dates(string_with_dates)
+    for match in matches:
+        print match
+

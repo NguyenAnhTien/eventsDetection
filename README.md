@@ -18,9 +18,8 @@ Provide a screenshot of the system, even a sketch should be ok
 TBD
 
 ## Contact
-Monishaa
-Heba
-Sofiane Abbar (sofiane.abbar@gmail.com)
+Monishaa Arulalan
+Heba 
+Sofiane Abbar (sofiane.abbar [at] gmail.com)
 Noora Al Emadi
-Tahar Zanouda
-
+Tahar
